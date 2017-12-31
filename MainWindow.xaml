@@ -1,0 +1,48 @@
+﻿<Window x:Class="Rellotge.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Rellotge"
+        mc:Ignorable="d"
+        Title="Rellotge" Height="350" Width="494"
+        Loaded="Window_Loaded" Closing="Window_Closing">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="478*"/>
+            <ColumnDefinition Width="9*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="12*"/>
+            <RowDefinition Height="85*"/>
+            <RowDefinition Height="63*"/>
+        </Grid.RowDefinitions>
+        <Menu x:Name="menu" HorizontalAlignment="Left" VerticalAlignment="Top" Width="484" Height="35" Grid.RowSpan="2" VerticalContentAlignment="Center" Grid.IsSharedSizeScope="True" Grid.ColumnSpan="2">
+            <MenuItem x:Name="MFitxer" Header="Fitxer">
+                <MenuItem x:Name="MISortir" Header="Sortir" Click="MISortir_Click"/>
+            </MenuItem>
+            <MenuItem x:Name="MPaisos" Header="Paísos">
+                <MenuItem x:Name="MINouPais" Header="Nou país" Click="MINouPais_Click"/>
+                <MenuItem x:Name="MIEliminarPais" Header="Eliminar país" Click="MIEliminarPais_Click_1"/>
+            </MenuItem>
+            <MenuItem x:Name="MAjuda" Header="Ajuda">
+                <MenuItem x:Name="MIAbout" Header="Sobre Rellotge" Click="MIAbout_Click"/>
+            </MenuItem>
+            <!--<ComboBox x:Name="CBPaisos" Width="120"/>-->
+        </Menu>
+
+        <Label x:Name="lblTime" Content="00:00:00" HorizontalAlignment="Left" Margin="285,81,0,0" Grid.Row="1" RenderTransformOrigin="0.655,1.103" VerticalAlignment="Top" FontSize="36" Width="182"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="75" Margin="310,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="95"/>
+        <Label x:Name="label" Content="Alarma" HorizontalAlignment="Left" Margin="337,24,0,0" Grid.Row="2" VerticalAlignment="Top" RenderTransformOrigin="0.532,1"/>
+        <TextBox x:Name="TBAlarma" HorizontalAlignment="Left" Height="23" Margin="337,55,0,0" Grid.Row="2" TextWrapping="Wrap" Text="00:00" VerticalAlignment="Top" Width="47" TextAlignment="Center" Background="#FFCFCFCF" TextChanged="tbAlarma_TextChanged"/>
+        <CheckBox x:Name="CBActiva" Content="Activa" HorizontalAlignment="Left" Margin="410,54,0,0" Grid.Row="2" VerticalAlignment="Top" Checked="CBActiva_Checked" Unchecked="CBActiva_Unchecked" RenderTransformOrigin="5.135,0.333" Width="57">
+        </CheckBox>
+        <Label Content="Hora Local" HorizontalAlignment="Left" Margin="318,55,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label Content="Seleccione país: " HorizontalAlignment="Left" Margin="14,7,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="lblHoraSecundaria" Content="" HorizontalAlignment="Left" FontSize="36" Margin="36,81,0,0" Grid.Row="1" VerticalAlignment="Top" Height="52" Width="178"/>
+        <Button x:Name="btn1" Content="Recalcular hora" HorizontalAlignment="Left" Margin="134,31,0,0" Grid.Row="1" VerticalAlignment="Top" Width="94" Click="btn1_Click" RenderTransformOrigin="-0.573,0.15" Height="24"/>
+        <Label Content="Hora secundaria" HorizontalAlignment="Left" Margin="60,55,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <ComboBox x:Name="CBPaisos" HorizontalAlignment="Left" Margin="10,33,0,0" Grid.Row="1" VerticalAlignment="Top" Width="107" RenderTransformOrigin="0.5,-0.227" SelectionChanged="CBPaisos_SelectionChanged"/>
+
+    </Grid>
+</Window>
